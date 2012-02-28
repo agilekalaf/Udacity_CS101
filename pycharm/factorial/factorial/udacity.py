@@ -2,7 +2,7 @@
 # variable url a string that is the value
 # of the first URL that appears in a link
 # tag in the string page.
-
+_author_ = 'gregbelanger'
 # page = contents of a web page
 page ='<div id="top_bin"><div id="top_content" class="width960"><div class="udacity float-left"><a href="http://www.xkcd.com">'
 start_link = page.find('<a href="')
@@ -13,4 +13,4 @@ url = page[url_begin:url_end]
 print url_begin
 print url_end
 print url
-print "You are too cool!!"
+print "You are too cool!!!!"
