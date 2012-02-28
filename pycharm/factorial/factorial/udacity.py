@@ -13,3 +13,4 @@ url = page[url_begin:url_end]
 print url_begin
 print url_end
 print url
+print "You are too cool!"
