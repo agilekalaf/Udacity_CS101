@@ -14,6 +14,8 @@ def print_all_links(page):
             print(url)
             page = page[endpos:]
         else:
+            #break
+            print("no urls")
             break
         
 
@@ -21,4 +23,7 @@ def print_all_links(page):
 #url, end_pos = get_next_target('this is a <a href="http://udacity.com">link!</a>')
 #url, end_pos = get_next_target('this" is a"')
 #print(url)
-print_all_links('this is a <a href="http://udacity.com">link!</a>. if you like this site you will also like <a href="http://google.com">Google</a>.')
+targetString = 'Hello World'
+#targetString = 'this is a <a href="http://udacity.com">link!</a>. if you like this site you will also like <a href="http://google.com">Google</a>.'
+#print_all_links('this is a <a href="http://udacity.com">link!</a>. if you like this site you will also like <a href="http://google.com">Google</a>.')
+print_all_links(targetString)
