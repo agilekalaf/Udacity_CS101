@@ -94,5 +94,8 @@ def crawl_web(seed,max_pages):
         if page not in crawled:
             union(tocrawl, get_all_links(get_page(page)))
             crawled.append(page)
+            if len(crawled) == max_pages:
+                return crawled
     return crawled
     
+print(crawl_web("http://www.udacity.com/cs101x/index.html",500))
