@@ -96,9 +96,18 @@ def get_all_links(page):
 def crawl_web(seed,max_depth):
     tocrawl = [seed]
     crawled = []
+    i = 0
     while tocrawl:
-        page = tocrawl.pop()
-        if page not in crawled:
-            union(tocrawl, get_all_links(get_page(page)))
-            crawled.append(page)
+            page = tocrawl.pop()
+            if tocrawl == []:
+                i = i + 1
+            if page not in crawled:
+                union(tocrawl, get_all_links(get_page(page)))
+                crawled.append(page)
+                if i == max_depth+1:
+                    return crawled
     return crawled
+
+print(crawl_web("http://www.udacity.com/cs101x/index.html",0))
+print(crawl_web("http://www.udacity.com/cs101x/index.html",1))
+print(crawl_web("http://www.udacity.com/cs101x/index.html",50))
