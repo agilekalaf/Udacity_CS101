@@ -41,5 +41,24 @@ incorrect = [[1,2,3,4],
              [4,4,4,4]]
 
 
-def check_sudoku():
-    
+def check_sudoku(input_list):
+    for row in input_list:
+        dupes = []
+        for e in row:
+            if e not in dupes:
+                dupes.append(e)
+            else:
+               return False
+    for col in input_list:
+        dupes = []
+        for e in col:
+            dupes = []
+            if e not in dupes:
+                dupes.append(e)
+            else:
+                return False
+    return True
+        
+        
+print(check_sudoku(correct))
+print(check_sudoku(incorrect))
