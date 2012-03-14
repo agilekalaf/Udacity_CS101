@@ -48,17 +48,16 @@ def check_sudoku(input_list):
             if e not in dupes:
                 dupes.append(e)
             else:
-               return False
+                return False
     for col in input_list:
         dupes = []
         for e in col:
-            dupes = []
+            #dupes = []
             if e not in dupes:
                 dupes.append(e)
             else:
                 return False
     return True
-        
         
 print(check_sudoku(correct))
 print(check_sudoku(incorrect))
