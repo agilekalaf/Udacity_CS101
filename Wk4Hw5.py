@@ -25,3 +25,36 @@ Created on Mar 19, 2012
 #print out => ['After', 'the', 'flood', 'all', 'the', 'colors', 'came', 'out']
 
 def split_string(source,splitlist):
+    sep = " "
+    for each_sep in splitlist:
+        source = source.replace(each_sep,sep)
+    return source.split()
+        
+#print(split_string("This is a test-of the,string separation-code!"," ,!-"))
+print(split_string("This is a test-of the,string separation-code!",",!-"))
+print(split_string("After  the flood   ...  all the colors came out.", " ."))
+#print('1<>2<>3'.split('<>'))
+#print('test-of'.split('-'))
+#print('the,string'.split(','))
+#print('seperation-code!'.split('-'))
+#print('code!'.split('!'))
+"""source = "This is a test-of the,string separation-code!"
+f = " "
+g = '!'
+h = ','
+i = '-'
+j = " "
+source = (source.replace(i,j))
+print(source)
+source = source.replace(h,j)
+print(source)
+source = source.replace(g,j)
+print(source)
+source = source.replace(f,j)
+print(source)
+source = source.split()
+print(source)
+seplist = ' ,!-'
+for e in seplist:
+    print(e)
+"""
