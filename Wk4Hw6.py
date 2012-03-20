@@ -3,6 +3,14 @@ Created on Mar 19, 2012
 
 @author: gregbelanger
 '''
+#The current index includes a url in the list of urls
+#for a keyword multiple times if the keyword appears
+#on that page more than once.
+
+#It might be better to only include the same url
+#once in the url list for a keyword, even if it appears
+#many times.
+
 #Modify add_to_index so that a given url is only
 #included once in the url list for a keyword,
 #no matter how many times that keyword appears.
@@ -14,10 +22,20 @@ Created on Mar 19, 2012
 def add_to_index(index, keyword, url):
     for entry in index:
         if entry[0] == keyword:
+            for each_url in entry[1]:
+                if each_url != url:
+                    entry[1].append(url)
+                    return
+    # not found, add new keyword to index
+    index.append([keyword, [url]])
+    
+"""def add_to_index(index, keyword, url):
+    for entry in index:
+        if entry[0] == keyword:
             entry[1].append(url)
             return
     # not found, add new keyword to index
-    index.append([keyword, [url]])
+    index.append([keyword, [url]])"""
 
 
 def get_page(url):
@@ -82,3 +100,6 @@ def lookup(index, keyword):
         if entry[0] == keyword:
             return entry[1]
     return None
+
+index = crawl_web("http://www.udacity.com/cs101x/index.html")
+print(lookup(index,"is"))
