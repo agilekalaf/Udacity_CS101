@@ -24,6 +24,6 @@ def greatest(p):
     return greatest
 
 
-list = []
-print(greatest(list))
+list1 = []
+print(greatest(list1))
     
