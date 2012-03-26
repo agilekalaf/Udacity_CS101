@@ -103,3 +103,4 @@ def lookup(index, keyword):
 
 index = crawl_web("http://www.udacity.com/cs101x/index.html")
 print(lookup(index,"is"))
+print(index)
